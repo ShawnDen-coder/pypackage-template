@@ -24,3 +24,9 @@ tasks:
       - coverage run
       - coverage report
       - coverage xml
+
+  deploy_pages:
+    help: "deplot new docs pages"
+    cmds:
+      - poetry install
+      - poetry run mkdocs gh-deploy --force

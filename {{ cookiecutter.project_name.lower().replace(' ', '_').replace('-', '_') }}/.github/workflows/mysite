@@ -12,10 +12,11 @@ jobs:
     steps:
       # 先打开 main 分支
       - uses: actions/checkout@v2
-      # 再安装 Python 和相关环境
-      - uses: actions/setup-python@v2
+      - name: Setup go-task
+        uses: pnorton5432/setup-task@v1
         with:
-          python-version: 3.x
+          task-version: 3.29.1
+
       # 使用包管理工具 pip 安装 mkdocs-material
       - run: pip install mkdocs-material
       # 使用 mkdocs-material 构建网站并部署到 gh-pages 分支
