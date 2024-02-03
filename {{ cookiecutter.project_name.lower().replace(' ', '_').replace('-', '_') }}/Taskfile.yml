@@ -7,11 +7,6 @@ tasks:
       - poetry update
       - poetry install
 
-  docs_serve:
-    help: "open docs_ server"
-    cmds:
-      - mkdocs serve {{.CLI_ARGS}}
-
   lint:
     help: "Lint this package"
     cmds:
@@ -24,6 +19,11 @@ tasks:
       - coverage run
       - coverage report
       - coverage xml
+
+  docs_serve:
+    help: "open docs_ server"
+    cmds:
+      - mkdocs serve {{.CLI_ARGS}}
 
   deploy_pages:
     help: "deplot new docs pages"
