@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  init:
+    help: "init this packages dev depends"
+    cmds:
+      - poetry update
+      - poetry install
+
+  docs_serve:
+    help: "open docs_ server"
+    cmds:
+      - mkdocs serve {{.CLI_ARGS}}
+
+  lint:
+    help: "Lint this package"
+    cmds:
+      - pre-commit run --all-files --color always
+      - safety check --continue-on-error --full-report
+
+  test:
+    help: "Test this package"
+    cmds:
+      - coverage run
+      - coverage report
+      - coverage xml
