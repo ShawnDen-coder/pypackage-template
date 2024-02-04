@@ -1,5 +1,6 @@
 {
   "project_name": "pypackage-template",
+  "__project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "my python tempalte",
   "minimal_python_version": [
     "3.7",

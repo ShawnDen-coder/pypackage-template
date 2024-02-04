@@ -1,4 +1,4 @@
-"""{{ cookiecutter.project_slug }} package"""
+"""{{ cookiecutter.__project_slug }} package"""
 
 from cfg import settings
 
