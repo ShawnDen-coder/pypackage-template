@@ -4,7 +4,6 @@ tasks:
   init:
     help: "init this packages dev depends"
     cmds:
-      - pre-commit install
       - poetry update
       - poetry install
       - poetry lock
@@ -25,10 +24,10 @@ tasks:
   docs_serve:
     help: "open docs_ server"
     cmds:
-      - mkdocs serve {{.CLI_ARGS}}
+      - poetry run mkdocs serve {{.CLI_ARGS}}
 
   deploy_pages:
     help: "deplot new docs pages"
     cmds:
       - poetry install
-      - poetry run mkdocs gh-deploy --remote-branch gh-pages
+      - poetry run mkdocs gh-deploy --remote-branch gh-pages --force
