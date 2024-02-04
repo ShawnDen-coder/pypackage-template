@@ -9,6 +9,12 @@
     "3.10"
   ],
   "version": "0.1.0",
+  "_compatible_versions_range": [
+    "3.7",
+    "3.8",
+    "3.9",
+    "3.10"
+  ],
   "_copy_without_render": [
     "poetry.lock",
     "Taskfile.yml",
