@@ -10,7 +10,7 @@ jobs:
           {%- set start_index = cookiecutter._compatible_versions_range.index(cookiecutter.minimal_python_version) -%}
           {% for version in cookiecutter._compatible_versions_range[start_index:] -%}
           "{{ version }}",
-          {%- endfor %}
+          {%- endfor -%}
         ]
         poetry-version: ["1.7.1"]
         os: [ubuntu-22.04, macos-latest, windows-latest]
