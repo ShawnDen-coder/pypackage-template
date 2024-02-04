@@ -1,4 +1,4 @@
-"""{{ cookiecutter.project_name.lower().replace(' ', '-') }} package"""
+"""{{ cookiecutter.project_slug }} package"""
 
 from cfg import settings
 

@@ -1,4 +1,4 @@
-src/{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}/cfg/.secrets.yaml
+src/{{ cookiecutter.project_slug }}/cfg/.secrets.yaml
 
 # Coverage.py
 htmlcov/
