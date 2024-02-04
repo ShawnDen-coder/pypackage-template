@@ -1,1 +1,1 @@
-"""{{ cookiecutter.project_name.lower().replace(' ', '-') }}""
+"""{{ cookiecutter.project_slug }}""
