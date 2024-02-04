@@ -4,8 +4,10 @@ tasks:
   init:
     help: "init this packages dev depends"
     cmds:
+      - pre-commit install
       - poetry update
       - poetry install
+      - poetry lock
 
   lint:
     help: "Lint this package"
@@ -29,4 +31,4 @@ tasks:
     help: "deplot new docs pages"
     cmds:
       - poetry install
-      - poetry run mkdocs gh-deploy --force
+      - poetry run mkdocs gh-deploy --remote-branch gh-pages
