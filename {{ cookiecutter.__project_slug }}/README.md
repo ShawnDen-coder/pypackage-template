@@ -1,6 +1,6 @@
 
 
-# My python template
+# {{ cookiecutter.__project_slug }}
 
 A Python package that ...
 
