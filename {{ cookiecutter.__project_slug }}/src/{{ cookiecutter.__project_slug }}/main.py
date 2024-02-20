@@ -1,6 +1,6 @@
 """{{ cookiecutter.__project_slug }} package"""
 
-from cfg import settings
+from {{ cookiecutter.__project_slug }}.cfg import settings
 
 
 # assert settings.name == "developer"
