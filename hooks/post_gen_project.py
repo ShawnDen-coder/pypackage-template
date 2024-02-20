@@ -1,5 +1,6 @@
 import os
 import shutil
+import subprocess
 
 
 def excludeFiles():
@@ -9,5 +10,11 @@ def excludeFiles():
                 shutil.rmtree(os.path.join(root, name))
 
 
+def init_branchs():
+    repo_url = '{{ cookiecutter.__project_remote_repo }}'
+    cmd = ["task", "init_repo", repo_url]
+    subprocess.check_call(cmd)
+
 
 excludeFiles()
+init_branchs()
