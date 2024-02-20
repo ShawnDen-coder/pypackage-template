@@ -7,6 +7,17 @@ tasks:
       - poetry install
       - poetry lock
 
+  init_repo:
+    desc: "Create two remote branches for development and documentation deployment"
+    cmds:
+      - git checkout -b dev
+      - git push origin dev
+      - git checkout -b gh-pages
+      - git push origin gh-pages
+      - git remote add origin {{.CLI_ARGS}}
+      - git branch -M master
+      - git push -u origin master
+
   lint:
     desc: "Lint this package"
     cmds:
@@ -28,7 +39,7 @@ tasks:
   deploy_pages:
     desc: "deploy new docs pages"
     cmds:
-      - poetry install
+      - poetry install --with docs
       - poetry run mkdocs gh-deploy --remote-branch gh-pages --force
 
   build:
