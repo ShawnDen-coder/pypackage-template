@@ -6,7 +6,7 @@ from pathlib import Path
 # Import third-party modules
 import mkdocs_gen_files
 
-project_name = "src/my_python_template"
+project_name = "src/{{ cookiecutter.project_slug }}"
 def main():
     nav = mkdocs_gen_files.Nav()
     root = Path(__file__).parent.parent
