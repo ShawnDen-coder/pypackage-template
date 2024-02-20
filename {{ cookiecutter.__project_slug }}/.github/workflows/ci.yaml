@@ -10,9 +10,9 @@ jobs:
       fail-fast: false
       matrix:
         python-version:
-        {% for version in cookiecutter._compatible_versions_range[cookiecutter._compatible_versions_range.index(cookiecutter.minimal_python_version):] %}
+        {%- for version in cookiecutter._compatible_versions_range[cookiecutter._compatible_versions_range.index(cookiecutter.minimal_python_version):] %}
           - "{{ version }}"
-        {% endfor %}
+        {%- endfor %}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,7 +25,7 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
 
       - name: setup poetry
         uses: abatilo/actions-poetry@v2
