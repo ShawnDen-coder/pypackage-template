@@ -2,32 +2,36 @@ version: '3'
 
 tasks:
   init:
-    help: "init this packages dev depends"
+    desc: "init this packages dev depends"
     cmds:
-      - poetry update
       - poetry install
       - poetry lock
 
   lint:
-    help: "Lint this package"
+    desc: "Lint this package"
     cmds:
+      - ruff check --fix
       - pre-commit run --all-files --color always
-      - safety check --continue-on-error --full-report
 
   test:
-    help: "Test this package"
+    desc: "Test this package"
     cmds:
-      - coverage run
-      - coverage report
-      - coverage xml
+      - poetry run coverage run
+      - poetry run coverage report
+      - poetry run coverage xml
 
   docs_serve:
-    help: "open docs_ server"
+    desc: "open docs_ server"
     cmds:
       - poetry run mkdocs serve {{.CLI_ARGS}}
 
   deploy_pages:
-    help: "deplot new docs pages"
+    desc: "deploy new docs pages"
     cmds:
       - poetry install
       - poetry run mkdocs gh-deploy --remote-branch gh-pages --force
+
+  build:
+    desc: "Build the package"
+    cmds:
+      - poetry build
