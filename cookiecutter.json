@@ -2,12 +2,8 @@
   "project_name": "pypackage-template",
   "__project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "my python tempalte",
-  "minimal_python_version": [
-    "3.7",
-    "3.8",
-    "3.9",
-    "3.10"
-  ],
+  "__project_remote_repo": "git@github.com:ShawnDen-coder/{{ cookiecutter.project_slug }}.git",
+  "minimal_python_version": "3.7",
   "version": "0.1.0",
   "_compatible_versions_range": [
     "3.7",
